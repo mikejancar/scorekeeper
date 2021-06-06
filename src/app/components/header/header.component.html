@@ -2,10 +2,10 @@
   <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Main menu">
     <mat-icon>menu</mat-icon>
   </button>
-  <span class="ml3">Scorekeeper</span>
+  <span class="ml3"><a [routerLink]="['/']" class="link white">Scorekeeper</a></span>
 </mat-toolbar>
 <mat-menu #menu="matMenu">
-  <button mat-menu-item>
+  <button mat-menu-item [routerLink]="['games', 'new']">
     <mat-icon>not_started</mat-icon>
     <span>New game</span>
   </button>

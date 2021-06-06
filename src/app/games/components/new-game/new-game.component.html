@@ -1,0 +1,42 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="w-100 pa4">
+  <h2>Start new game</h2>
+  <mat-form-field class="w-100">
+    <mat-label>Home team</mat-label>
+    <input type="text" placeholder="Enter home team" aria-label="Home team" matInput [formControl]="homeTeam"
+      [matAutocomplete]="autoHome">
+    <mat-autocomplete autoActiveFirstOption #autoHome="matAutocomplete">
+      <mat-option *ngFor="let team of filteredHomeTeams | async" [value]="team">
+        {{team}}
+      </mat-option>
+    </mat-autocomplete>
+    <mat-error *ngIf="homeTeam.hasError('required')">
+      Home team is required
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="w-100">
+    <mat-label>Away team</mat-label>
+    <input type="text" placeholder="Enter Away team" aria-label="Away team" matInput [formControl]="awayTeam"
+      [matAutocomplete]="autoAway">
+    <mat-autocomplete autoActiveFirstOption #autoAway="matAutocomplete">
+      <mat-option *ngFor="let team of filteredAwayTeams | async" [value]="team">
+        {{team}}
+      </mat-option>
+    </mat-autocomplete>
+    <mat-error *ngIf="awayTeam.hasError('required')">
+      Away team is required
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="w-100">
+    <mat-label>Date played</mat-label>
+    <input matInput [matDatepicker]="datepicker" formControlName="gameDate">
+    <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+    <mat-datepicker #datepicker></mat-datepicker>
+    <mat-error *ngIf="form.get('gameDate').hasError('required')">
+      Date played is required
+    </mat-error>
+  </mat-form-field>
+  <div class="flex justify-around items-center mt4">
+    <button mat-flat-button type="submit" color="primary">Start</button>
+    <button mat-flat-button type="button" [routerLink]="['/']">Cancel</button>
+  </div>
+</form>

@@ -1,0 +1,9 @@
+<div *ngIf="game$ | async as game" class="flex flex-column flex-wrap items-center w-100">
+  <div class="flex justify-center w-90 mt6">
+    <app-team-score class="w-50" header="Away" [team]="game.away"></app-team-score>
+    <app-team-score class="w-50" header="Home" [team]="game.home"></app-team-score>
+  </div>
+  <div class="flex justify-center w-90 mt5">
+    <app-inning-state class="w-100" [game]="game"></app-inning-state>
+  </div>
+</div>
