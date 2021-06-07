@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -10,7 +10,7 @@ import { GamesService } from '../../games.service';
   selector: 'app-new-game',
   templateUrl: './new-game.component.html'
 })
-export class NewGameComponent {
+export class NewGameComponent implements OnInit {
   form: FormGroup;
   teamOptions: string[] = [];
   filteredHomeTeams: Observable<string[]>;
@@ -26,7 +26,7 @@ export class NewGameComponent {
     });
 
     const storedTeams = window.localStorage.getItem('teams');
-    this.teamOptions = storedTeams ? storedTeams.split(',') : []
+    this.teamOptions = storedTeams ? storedTeams.split(',') : [];
 
     this.filteredHomeTeams = this.homeTeam.valueChanges.pipe(
       startWith(''),

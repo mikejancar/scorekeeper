@@ -2,11 +2,11 @@
   <div class="flex flex-column justify-center w-40">
     <div>{{game.inning.half}}</div>
     <div class="flex justify-between items-center">
-      <button mat-mini-fab color="accent">
+      <button mat-mini-fab color="accent" (click)="updateInning(false)">
         <mat-icon>remove</mat-icon>
       </button>
       <span>{{game.inning.number}}</span>
-      <button mat-mini-fab color="accent">
+      <button mat-mini-fab color="accent" (click)="updateInning(true)">
         <mat-icon>add</mat-icon>
       </button>
     </div>
@@ -14,11 +14,11 @@
   <div class="flex flex-column justify-center w-40">
     <div>Outs</div>
     <div class="flex justify-between items-center">
-      <button mat-mini-fab color="accent">
+      <button mat-mini-fab color="accent" (click)="updateOuts(false)">
         <mat-icon>remove</mat-icon>
       </button>
       <span>{{game.outs}}</span>
-      <button mat-mini-fab color="accent">
+      <button mat-mini-fab color="accent" (click)="updateOuts(true)">
         <mat-icon>add</mat-icon>
       </button>
     </div>
