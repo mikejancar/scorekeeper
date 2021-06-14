@@ -6,4 +6,8 @@
   <div class="flex justify-center w-90 mt5">
     <app-inning-state class="w-100" [game]="game"></app-inning-state>
   </div>
+  <div class="flex justify-around w-90 mt5">
+    <button mat-raised-button color="primary" (click)="saveGame(false)">Save Game</button>
+    <button mat-raised-button color="primary" (click)="saveGame(true)">Save and Exit</button>
+  </div>
 </div>

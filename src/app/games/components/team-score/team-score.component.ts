@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 import { Team } from '../../../models/team.interface';
-import { GamesService } from '../../games.service';
+import { GamesService } from '../../../shared/services/games.service';
 
 @Component({
   selector: 'app-team-score',

@@ -5,6 +5,9 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "ng build --prod",
+    "deploy": "npm run build:prod & npm run publish",
+    "publish": "aws2 s3 sync ./dist/scorekeeper/ s3://scorekeeper.mikejancar.com --delete",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

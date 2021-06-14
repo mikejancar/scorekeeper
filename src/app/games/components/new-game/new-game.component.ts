@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 
-import { GamesService } from '../../games.service';
+import { GamesService } from '../../../shared/services/games.service';
 
 @Component({
   selector: 'app-new-game',

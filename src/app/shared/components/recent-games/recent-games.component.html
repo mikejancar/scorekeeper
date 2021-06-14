@@ -1,0 +1,8 @@
+<div class="pa4">
+  <div class="mat-headline">Recent Games</div>
+  <div>
+    <mat-card *ngFor="let game of gamesService.recentGames$ | async">
+      <mat-title>{{game.datePlayed}}</mat-title>
+    </mat-card>
+  </div>
+</div>
