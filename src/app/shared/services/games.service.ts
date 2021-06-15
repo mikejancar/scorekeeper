@@ -55,6 +55,8 @@ export class GamesService {
       game.inning.half = currentHalf === 'Top' ? 'Bot' : 'Top';
     }
 
+    game.outs = 0;
+
     this.saveCurrentGame(game);
   }
 
